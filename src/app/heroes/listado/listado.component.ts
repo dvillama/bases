@@ -14,4 +14,12 @@ export class ListadoComponent {
     this.heroeBorrado = this.heroes.pop() || '';
   }
 
+  mostrarHeroeBorrado(): boolean {
+    return this.heroeBorrado.length>1;
+  }
+
+  mostrarBotonBorrar(): boolean {
+    return this.heroes.length>0;
+  }
+
 }
