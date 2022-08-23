@@ -6,4 +6,22 @@ import { Component } from "@angular/core";
 })
 export class HeroeComponent {
 
+    public nombre:string = 'Iron Man';
+    public edad:number = 42;
+
+    get nombreCapitalizado(): string {
+        return this.nombre.toUpperCase();
+    }
+
+    obtenerNombre(): string {
+        return `${ this.nombre } - ${ this.edad }`;
+    }
+
+    cambiarNombre():void {
+        this.nombre = 'Hulk';
+    }
+
+    cambiarEdad():void {
+        this.edad = 40;
+    }
 }
