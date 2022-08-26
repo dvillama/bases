@@ -1,10 +1,7 @@
 import { Component} from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
 
-interface Personaje {
-  nombre: string;
-  poder: number;
-}
+import { Personaje } from '../interfaces/dbz.interface';
+
 
 @Component({
   selector: 'app-main-page',
