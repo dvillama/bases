@@ -1,4 +1,10 @@
 import { Component} from '@angular/core';
+import { NonNullableFormBuilder } from '@angular/forms';
+
+interface Personaje {
+  nombre: string;
+  poder: number;
+}
 
 @Component({
   selector: 'app-main-page',
@@ -6,8 +12,35 @@ import { Component} from '@angular/core';
 })
 export class MainPageComponent {
 
+  personajes: Personaje[] = [
+    {
+      nombre: 'Goku',
+      poder:15000
+    }, 
+    {
+      nombre: 'Krilin',
+      poder: 3141
+    }
+  ];
+
+  nuevo:Personaje = {
+    nombre: '',
+    poder: 0
+  }
+
   agregar( ) {
-    console.log('Esta es una prueba!');
+
+    if( this.nuevo.nombre.trim().length === 0) {
+      return;
+    }
+
+    console.log(this.nuevo);
+    this.personajes.push( this.nuevo );
+    this.nuevo = {
+      nombre : '',
+      poder : 0
+    }
+    return;
   }
 
 }
